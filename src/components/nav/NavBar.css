@@ -9,6 +9,14 @@
     background-color: #003c77;
   }
   
+  .cryptoNav {
+    font-size: xx-large;
+    padding-top: 7px;
+    text-transform: uppercase;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+  }
   
   .navbar__item {
     flex-basis: 20%;

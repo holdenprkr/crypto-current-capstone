@@ -4,6 +4,13 @@
     text-align: center;
 }
 
+.registerTitle {
+    color: #003c77;
+}
+.registerPrompt {
+    color: #0080ff;
+}
+
 h2 {
     color: #003c77;
     text-align: center;
@@ -38,7 +45,7 @@ fieldset {
 
 .form-control {
     display: block;
-    width: 100%;
+    width: 400px;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;

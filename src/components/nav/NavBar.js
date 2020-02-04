@@ -6,6 +6,9 @@ import NavLink from "./NavLink"
 export default (props) => {
     return (
         <ul className="navbar">
+            <li className="navbar__item cryptoNav">
+               <span className="cryptoNav">CC</span> 
+            </li>
             <li className="navbar__item">
                 <NavLink to="/" {...props}>Home</NavLink>    
             </li>
