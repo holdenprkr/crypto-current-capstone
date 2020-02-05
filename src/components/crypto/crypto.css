@@ -1,0 +1,25 @@
+.cryptoData {
+    display: flex;
+    background-color: rgba(128, 128, 128, .2);
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.cryptoChart {
+    flex-basis: 73%;
+}
+
+.cryptoStatistics {
+    flex-basis: 27%;
+    line-height: 2em;
+    font-size: 1.6em;
+    color: #0080ff;
+    background-color: rgba(128, 128, 128, .3);
+    margin: 5px;
+    padding: 0px 7px;
+    border-radius: 15px;
+}
+
+.statData {
+    color: #003c77
+}
