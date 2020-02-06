@@ -7,7 +7,7 @@ import Register from "./auth/Register"
 import "./CryptoCurrent.css"
 
 export default () => (
-    <>
+    <div className="main">
         <Route render={() => {
             if (localStorage.getItem("activeUser")) {
                 return (
@@ -23,5 +23,5 @@ export default () => (
 
         <Route path="/login" render={props => <Login {...props} />} />
         <Route path="/register" render={props => <Register {...props} />} />
-    </>
+    </div>
 )

@@ -1,0 +1,35 @@
+.messageBoard {
+    display: flex
+}
+
+.messageContainer {
+    width: 75%;
+    margin: 20px auto 0px auto;
+    padding: 15px 30px;
+    background-color: rgba(128, 128, 128, .2);
+    border-radius: 15px;
+}
+
+.indivMessage {
+    background-color: rgba(128, 128, 128, .3);
+    border-radius: 15px;
+    flex-basis: 90%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.publicMessageButton {
+    margin-bottom: 30px;
+    background-color: #003c77 !important;
+    border-color: #003c77 !important;
+}
+
+.primaryModalButton {
+    background-color: #003c77 !important;
+    border-color: #003c77 !important;
+}
+
+.secondaryModalButton {
+    background-color: #626262 !important;
+    border-color: #626262 !important;
+}

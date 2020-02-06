@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Login.css"
-
+import Button from "react-bootstrap/Button"
 
 const Login = props => {
     const email = useRef()
@@ -68,9 +68,9 @@ const Login = props => {
                             required />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <Button className="btn btn-info" type="submit">
                             Sign in
-                    </button>
+                    </Button>
                     </fieldset>
                 </form>
             </section>
