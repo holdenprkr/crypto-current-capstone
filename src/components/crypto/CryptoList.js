@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { CryptoDataContext } from "./CryptoDataProvider";
 import CryptoChart from "./CryptoChart";
 import CryptoStatistics from "./CryptoStatistics";
-import "./Crypto.css"
+import "./crypto.css"
 
 export default () => {
     const { cryptosData } = useContext(CryptoDataContext)

@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { MessageContext } from "./MessageProvider"
 import Button from "react-bootstrap/Button";
 import Form from 'react-bootstrap/Form'
 
 
-export default () => {
+export default (props, { editMessage }) => {
     const { addMessage } = useContext(MessageContext)
     const [message, setMessage] = useState({})
 
@@ -19,7 +19,7 @@ export default () => {
             addMessage({
                 userId: parseInt(localStorage.getItem("activeUser")),
                 message: message.message,
-                timestamp: new Date(Date.now()).toLocaleDateString('en-US')
+                timestamp: Date.now()
             })
         }
 
