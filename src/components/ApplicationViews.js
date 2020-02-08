@@ -1,16 +1,27 @@
 import React from "react"
-import CryptoProvider from "./crypto/CryptoProvider"
+import CryptoDataProvider from "./crypto/CryptoDataProvider"
 import CryptoList from "./crypto/CryptoList"
 import { Route } from "react-router-dom"
+import CryptoNameProvider from "./crypto/CryptoNameProvider"
+import MessageProvider from "./message/MessageProvider"
+import MessageList from "./message/MessageList"
 
 export default (props) => {
     return (
         <>
-            <CryptoProvider>
+            <CryptoDataProvider>
+                <CryptoNameProvider>
+                    <Route exact path="/" render={
+                        props => <CryptoList />
+                    } />
+                </CryptoNameProvider>
+            </CryptoDataProvider>
+
+            <MessageProvider>
                 <Route exact path="/" render={
-                    props => <CryptoList />
-                } />  
-            </CryptoProvider>
+                    props => <MessageList {...props} />
+                } />
+            </MessageProvider>
         </>
     )
 }

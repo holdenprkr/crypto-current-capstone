@@ -3,14 +3,18 @@
     background-color: rgba(128, 128, 128, .2);
     margin: 5px;
     border-radius: 15px;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .cryptoChart {
-    flex-basis: 73%;
+    flex-basis: 66%;
 }
 
 .cryptoStatistics {
-    flex-basis: 27%;
+    text-align: center;
+    flex-basis: 34%;
     line-height: 2em;
     font-size: 1.6em;
     color: #0080ff;
@@ -22,4 +26,24 @@
 
 .statData {
     color: #003c77
+}
+
+.cryptoNewsButton {
+    background-color: #003c77 !important;
+    border-color: #003c77 !important;
+    margin: 0px 5px 0px 5px
+}
+
+.currencySelect {
+    display: flex;
+    justify-content: center
+} 
+
+.cryptoDropdown {
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+.dropdownSection {
+    margin: 6px 5px 0px 5px
 }

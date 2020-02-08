@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Login.css"
-
+import Button from "react-bootstrap/Button"
 
 const Login = props => {
     const email = useRef()
@@ -49,8 +49,8 @@ const Login = props => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Crypto Current</h1>
-                    <h2>Please sign in</h2>
+                    <h1 className="cryptoCurrentLogin">Crypto Current</h1>
+                    <h2 className="signInLogin">Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail" className="login--label"> Email address </label>
                         <input ref={email} type="email"
@@ -68,9 +68,9 @@ const Login = props => {
                             required />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <Button className="btn btn-info signInButton" type="submit">
                             Sign in
-                    </button>
+                    </Button>
                     </fieldset>
                 </form>
             </section>
