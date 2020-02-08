@@ -1,5 +1,6 @@
 .messageBoard {
-    display: flex
+    display: flex;
+    flex-direction: column;
 }
 
 .messageContainer {
@@ -10,16 +11,42 @@
     border-radius: 15px;
 }
 
+.messageEditButton {
+    background-color: #003c77 !important;
+    border-color: #003c77 !important;
+    margin: 5px;
+}
+
+.messageDeleteButton {
+    margin: 0px;
+}
+
+.messageFollowButton {
+    background-color: #003c77 !important;
+    border-color: #003c77 !important;
+    margin: 5px;
+}
+
 .indivMessage {
     background-color: rgba(128, 128, 128, .3);
     border-radius: 15px;
-    flex-basis: 90%;
     padding: 10px;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
+    width: 90%
+}
+
+.messageInputArea {
+    background-color: rgba(128, 128, 128, .3);
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.messageUsername {
+    margin-bottom: 0px;
 }
 
 .publicMessageButton {
-    margin-bottom: 30px;
     background-color: #003c77 !important;
     border-color: #003c77 !important;
 }
