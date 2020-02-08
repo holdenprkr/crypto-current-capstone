@@ -22,7 +22,7 @@ const MessageProvider = (props) => {
             .then(getMessages)
     }
 
-    const releaseMessage = messageId => {
+    const deleteMessage = messageId => {
         return fetch(`http://localhost:8088/messages/${messageId}`, {
             method: "DELETE"
         })
@@ -46,7 +46,7 @@ const MessageProvider = (props) => {
 
     return (
         <MessageContext.Provider value={{
-            messages, addMessage, releaseMessage, updateMessage
+            messages, addMessage, deleteMessage, updateMessage
         }}>
             {props.children}
         </MessageContext.Provider>

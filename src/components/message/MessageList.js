@@ -8,12 +8,14 @@ import MessageForm from "./MessageForm";
 export default (props) => {
     const { messages } = useContext(MessageContext)
 
+    const inOrderMessages = messages.reverse()
+
     return (
         <>
             <div className="messageContainer">
                 <MessageForm />
                 <div className="messageBoard">
-                    {messages.map(message => {
+                    {inOrderMessages.map(message => {
                         return <Message key={message.id} message={message} />
                     })}
                 </div>

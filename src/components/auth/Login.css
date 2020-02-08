@@ -29,7 +29,8 @@
 }
 
 .login--label {
-    color: #003c77
+    color: #003c77;
+    padding: 5px 0px 3px 0px;
 }
 
 fieldset {
@@ -74,7 +75,8 @@ fieldset {
 
 .container--login {
     text-align: center;
-    margin: 50px;
+    height: 100%;
+    padding: 30px;
 }
 
 .form--login {
