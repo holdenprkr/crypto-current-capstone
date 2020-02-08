@@ -1,3 +1,8 @@
 .main {
-    background-color: rgba(000, 128, 255, .12)
+    background-color: rgba(000, 128, 255, .12);
+}
+
+h2 {
+    color: #003c77;
+    text-align: center;
 }

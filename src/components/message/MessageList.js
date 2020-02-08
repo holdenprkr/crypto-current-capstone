@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { MessageContext } from "./MessageProvider";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Message from "./Message"
-import "./Message.css"
-// import MessageForm from "./MessageForm";
+import Message from "./Message";
+import "./Message.css";
+import MessageForm from "./MessageForm";
 
 
 export default (props) => {
@@ -12,7 +11,7 @@ export default (props) => {
     return (
         <>
             <div className="messageContainer">
-                <Button type="button" className="btn btn-info publicMessageButton">Add A Public Message</Button>
+                <MessageForm />
                 <div className="messageBoard">
                     {messages.map(message => {
                         return <Message key={message.id} message={message} />

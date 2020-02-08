@@ -4,6 +4,7 @@
     text-align: center;
 }
 
+
 .registerTitle {
     color: #003c77;
 }
@@ -11,9 +12,20 @@
     color: #0080ff;
 }
 
-h2 {
+.cryptoCurrentLogin {
+    margin-bottom: 40px
+}
+
+.signInLogin {
     color: #003c77;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.signInButton {
+    margin-top: 10px;
+    background-color: #003c77 !important;
+    border-color: #003c77 !important;
 }
 
 .login--label {
@@ -62,13 +74,14 @@ fieldset {
 
 .container--login {
     text-align: center;
+    margin: 50px;
 }
 
 .form--login {
     background-position-x: center;
     z-index: 1;
     min-height: 25rem;
-    background-color: hsla(0,0%,100%,0.40);
+    background-color: none;
     background-blend-mode: overlay;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
