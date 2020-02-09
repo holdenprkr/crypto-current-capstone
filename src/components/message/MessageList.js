@@ -6,9 +6,7 @@ import MessageForm from "./MessageForm";
 
 
 export default (props) => {
-    const { messages, updateMessage } = useContext(MessageContext)
-    const [ messageEditObj, setMessage ] = useState({})
-    console.log(messageEditObj)
+    const { messages } = useContext(MessageContext)
 
     const OrderMessages = messages.sort((a, b) => {
         if (a.timestamp > b.timestamp) return -1;
@@ -19,10 +17,10 @@ export default (props) => {
     return (
         <>
             <div className="messageContainer">
-                <MessageForm messageToEdit={messageEditObj} />
+                <MessageForm {...props}/>
                 <div className="messageBoard">
                     {OrderMessages.map(message => {
-                        return <Message key={message.id} message={message} setMessage={setMessage} {...props} />
+                        return <Message key={message.id} message={message} history={props.history} />
                     })}
                 </div>
             </div>

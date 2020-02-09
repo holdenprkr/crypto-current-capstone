@@ -10,7 +10,7 @@ export default (props) => {
                <span className="cryptoNav">CC</span> 
             </li>
             <li className="navbar__item">
-                <NavLink to="/" {...props}>Home</NavLink>    
+                <NavLink to="/home" {...props}>Home</NavLink>    
             </li>
             <li className="navbar__item">
                 <NavLink to="/following" {...props}>Following</NavLink>    
