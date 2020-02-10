@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { MessageContext } from "./MessageProvider";
 import Message from "./Message";
 import "./Message.css";
