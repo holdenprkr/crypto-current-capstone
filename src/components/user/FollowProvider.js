@@ -6,7 +6,7 @@ const FollowerProvider = (props) => {
     const [followers, setFollowers] = useState([])
 
     const getFollowers = () => {
-        return fetch("http://localhost:8088/followers")
+        return fetch("http://localhost:8088/followers?_expand=user")
             .then(res => res.json())
             .then(setFollowers)
     }

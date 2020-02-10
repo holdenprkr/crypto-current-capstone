@@ -50,7 +50,7 @@ const Login = props => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1 className="cryptoCurrentLogin">Crypto Current</h1>
-                    <h2 className="signInLogin">Please sign in</h2>
+                    <h2 className="signInLogin font-weight-normal">Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail" className="login--label"> Email address </label>
                         <input ref={email} type="email"

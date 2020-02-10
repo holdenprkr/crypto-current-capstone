@@ -5,7 +5,12 @@ import { FollowerContext } from "../user/FollowProvider";
  
 export default ({ message, history }) => {
     const { deleteMessage } = useContext(MessageContext)
-    const { newFollow } = useContext(FollowerContext)
+    const { newFollow, followers, deleteFollow } = useContext(FollowerContext)
+
+    const UsersImFollowing = followers.filter(following => following.activeUserId === parseInt(localStorage.getItem("activeUser")))
+
+    const FoundFollow = UsersImFollowing.find(user => user.userId === message.userId)
+
     
     if (message.userId === parseInt(localStorage.getItem("activeUser"))) {
         return (
@@ -26,6 +31,21 @@ export default ({ message, history }) => {
                     >Delete</Button>
                 </div>
             </>
+        )
+    } else if (FoundFollow) {
+        return (
+        <>
+            <div className="indivMessage">
+                <h5 className="messageUsername">{message.user.username}</h5>
+                <div>{new Date(message.timestamp).toLocaleDateString('en-us')}</div>
+                <div>{message.message}</div> 
+                <Button type="button" className="btn btn-info messageFollowButton"
+                onClick={() => {
+                    deleteFollow(FoundFollow.id)
+                  }}
+                >Unfollow {message.user.username}</Button>
+            </div>
+        </>
         )
     } else {
         return (

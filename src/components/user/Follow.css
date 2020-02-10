@@ -1,0 +1,22 @@
+.followContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.followCard {
+    background-color: rgba(128, 128, 128, .3);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0 auto 10px auto;
+    width: 82%
+}
+
+.followerPost {
+    background-color: rgba(128, 128, 128, .6);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0 auto 10px auto;
+    width: 80%
+}

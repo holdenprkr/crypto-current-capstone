@@ -56,6 +56,7 @@ export default (props) => {
                         as="textarea" 
                         name="messageArea" 
                         rows="3"
+                        placeholder="Post your research or see what others are saying down below!"
                         value={message}
                         onChange={handleControlledInputChange}/>
                 </Form.Group>
@@ -66,7 +67,7 @@ export default (props) => {
                         constructNewMessage()
                         setMessage("")
                     }}
-                    >Add A Public Message</Button>
+                    >{editMode ? "Edit Your Public Message" : "Add A Public Message"}</Button>
             </div>
         </>
     )

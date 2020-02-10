@@ -21,6 +21,11 @@
     margin: 0px;
 }
 
+.messagePrompt {
+    text-align: right;
+    color: #003c77;
+}
+
 .messageFollowButton {
     background-color: #003c77 !important;
     border-color: #003c77 !important;
