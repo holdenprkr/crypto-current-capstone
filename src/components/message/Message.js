@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 import { MessageContext } from "./MessageProvider";
 import { FollowerContext } from "../user/FollowProvider";
  
-export default ({ message, history }) => {
+export default ({ message, history, handleClick }) => {
     const { deleteMessage } = useContext(MessageContext)
     const { newFollow, followers, deleteFollow } = useContext(FollowerContext)
 
@@ -21,7 +21,8 @@ export default ({ message, history }) => {
                     <div>{message.message}</div> 
                     <Button type="button" className="btn btn-info messageEditButton"
                     onClick={() => {
-                        history.push(`/home/${message.id}`)
+                        history.push(`/home/${message.id}`,
+                        handleClick())
                         }}
                     >Edit</Button>
                     <Button type="button" className="messageDeleteButton" variant="outline-danger"
