@@ -10,10 +10,16 @@
 }
 .registerPrompt {
     color: #0080ff;
+    margin-top: 20px;
 }
 
 .cryptoCurrentLogin {
     margin-bottom: 40px
+}
+
+.cryptoCurrentRegister {
+    margin-bottom: 25px;
+    color: #003c77;
 }
 
 .signInLogin {

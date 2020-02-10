@@ -6,6 +6,8 @@ import CryptoNameProvider from "./crypto/CryptoNameProvider"
 import MessageProvider from "./message/MessageProvider"
 import MessageList from "./message/MessageList"
 import FollowerProvider from "./user/FollowProvider"
+import FollowList from "./user/FollowList"
+import UserProvider from "./user/UserProvider"
 
 export default (props) => {
     return (
@@ -20,12 +22,17 @@ export default (props) => {
 
             <MessageProvider>
                 <FollowerProvider>
-                    <Route exact path="/home" render={
-                        props => <MessageList {...props} />
-                    } />
-                    <Route exact path="/home/:messageId(\d+)" render={
-                        props => <MessageList {...props} />
-                    } />
+                    <UserProvider>
+                        <Route exact path="/home" render={
+                            props => <MessageList {...props} />
+                        } />
+                        <Route exact path="/home/:messageId(\d+)" render={
+                            props => <MessageList {...props} />
+                        } />
+                        <Route exact path="/following" render={
+                            props => <FollowList {...props} />
+                        } />
+                    </UserProvider>
                 </FollowerProvider>
             </MessageProvider>
         </>

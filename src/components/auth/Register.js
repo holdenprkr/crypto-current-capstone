@@ -1,4 +1,6 @@
 import React, { useRef } from "react"
+import Button from "react-bootstrap/Button"
+
 import "./Login.css"
 
 const Register = props => {
@@ -39,7 +41,7 @@ const Register = props => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("activeUser", createdUser.id)
-                                props.history.push("/")
+                                props.history.push("/home")
                             }
                         })
                 })
@@ -52,7 +54,7 @@ const Register = props => {
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
                 <h2 className="h3 mb-3 font-weight-normal registerPrompt">Please Register for</h2>
-                <h1 className="h3 mb-3 font-weight-normal registerTitle">Crypto Current</h1>
+                <h1 className="cryptoCurrentRegister">Crypto Current</h1>
                 <fieldset>
                     <label htmlFor="username" className="login--label"> Username </label>
                     <input ref={username} type="text"
@@ -86,9 +88,9 @@ const Register = props => {
                         required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit">
-                        Sign in
-                    </button>
+                    <Button className="btn btn-info signInButton" type="submit">
+                            Sign in
+                    </Button>
                 </fieldset>
             </form>
         </main>
