@@ -18,16 +18,23 @@ export default (props) => {
         return 0;
       });
 
+      const messageFormRef = React.createRef();
+      const handleClick = () =>
+        messageFormRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+
     return (
         <>
             <div className="messageContainer">
                 <div className="messagePrompt">
-                    <h4>Welcome to the public message board {activeUserObj.username}!</h4>
+                    <h4 ref={messageFormRef}>Welcome to the public message board {activeUserObj.username}!</h4>
                 </div>
-                <MessageForm {...props}/>
+                <MessageForm {...props} messageFormRef={messageFormRef}/>
                 <div className="messageBoard">
                     {OrderMessages.map(message => {
-                        return <Message key={message.id} message={message} history={props.history} />
+                        return <Message key={message.id} message={message} history={props.history} handleClick={handleClick}/>
                     })}
                 </div>
             </div>
