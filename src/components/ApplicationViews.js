@@ -20,7 +20,10 @@ export default (props) => {
 
             <MessageProvider>
                 <FollowerProvider>
-                    <Route path="/home" render={
+                    <Route exact path="/home" render={
+                        props => <MessageList {...props} />
+                    } />
+                    <Route exact path="/home/:messageId(\d+)" render={
                         props => <MessageList {...props} />
                     } />
                 </FollowerProvider>
