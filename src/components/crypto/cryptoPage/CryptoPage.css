@@ -8,12 +8,36 @@
 .cryptoList {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto 10px auto;
     justify-content: space-around;
-    width: 50%;
-    background-color: rgba(128, 128, 128, .4);
+    width: 90%;
+}
+
+.watchlistHeader {
+    width: 100%;
+}
+
+.watchlistContainer {
+    flex-basis: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(128, 128, 128, .25);
     border-radius: 15px;
     padding: 10px;
-    margin: 0 auto 10px auto;
+    justify-content: center;
+}
+
+.cryptosToWatch {
+    flex-basis: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(128, 128, 128, .5);
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.favoriteMarketHeader {
+    width: 100%;
 }
 
 .cryptoCardContainer {
@@ -25,21 +49,45 @@
 }
 
 .marketCard {
-    height: 100%;
+    height: fit-content;
 }
 
 .cryptoMarkets {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto 10px auto;
     justify-content: space-around;
-    width: 50%;
-    background-color: rgba(128, 128, 128, .4);
+    width: 90%;
+}
+
+.marketList {
+    flex-basis: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(128, 128, 128, .5);
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.favoriteMarketContainer {
+    flex-basis: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(128, 128, 128, .25);
     border-radius: 15px;
     padding: 10px;
-    margin: 0 auto 10px auto;
+    justify-content: center;
 }
 
 .favoriteButton {
-        background-color: #003c77 !important;
-        border-color: #003c77 !important;
+    background-color: #003c77 !important;
+    border-color: #003c77 !important;
+}
+
+.visitButton {
+    margin-top: 5px;
+}
+
+.cryptoImage {
+    padding: 10px;
 }
