@@ -10,6 +10,8 @@ import UserProvider from "./user/UserProvider"
 import CryptoProvider from "./crypto/CryptoProvider"
 import MarketProvider from "./crypto/MarketProvider"
 import CryptoPageList from "./crypto/cryptoPage/CryptoPageList"
+import CryptoFavoriteProvider from "./crypto/cryptoPage/CryptoFavoriteProvider"
+import MarketFavoriteProvider from "./crypto/cryptoPage/MarketFavoriteProvider"
 
 export default (props) => {
     return (
@@ -40,9 +42,13 @@ export default (props) => {
 
             <CryptoProvider>
                 <MarketProvider>
-                    <Route exact path="/buy" render={
-                       props => <CryptoPageList {...props} />
-                    } />
+                    <CryptoFavoriteProvider>
+                        <MarketFavoriteProvider>
+                            <Route exact path="/buy" render={
+                               props => <CryptoPageList {...props} />
+                            } />
+                        </MarketFavoriteProvider>
+                    </CryptoFavoriteProvider>
                 </MarketProvider>
             </CryptoProvider>
         </>

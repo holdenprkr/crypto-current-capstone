@@ -11,42 +11,13 @@ const CryptoProvider = (props) => {
             .then(setCryptos)
     }
 
-    const addCrypto = crypto => {
-        return fetch("http://localhost:8088/cryptos", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(crypto)
-        })
-            .then(getCryptos)
-    }
-
-    const deleteCrypto = cryptoId => {
-        return fetch(`http://localhost:8088/cryptos/${cryptoId}`, {
-            method: "DELETE"
-        })
-            .then(getCryptos)
-    }
-
-    const updateCrypto = crypto => {
-        return fetch(`http://localhost:8088/Cryptos/${crypto.id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(crypto)
-        })
-            .then(getCryptos)
-    }
-
     useEffect(() => {
         getCryptos()
     }, [])
 
     return (
         <CryptoContext.Provider value={{
-            cryptos, addCrypto, deleteCrypto, updateCrypto
+            cryptos
         }}>
             {props.children}
         </CryptoContext.Provider>
