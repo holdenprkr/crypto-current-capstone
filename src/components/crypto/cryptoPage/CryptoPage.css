@@ -1,0 +1,45 @@
+.cryptoPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cryptoList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 50%;
+    background-color: rgba(128, 128, 128, .4);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0 auto 10px auto;
+}
+
+.cryptoCardContainer {
+    margin-bottom: 10px;
+}
+
+.marketCardContainer {
+    margin-bottom: 10px;
+}
+
+.marketCard {
+    height: 100%;
+}
+
+.cryptoMarkets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 50%;
+    background-color: rgba(128, 128, 128, .4);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0 auto 10px auto;
+}
+
+.favoriteButton {
+        background-color: #003c77 !important;
+        border-color: #003c77 !important;
+}
