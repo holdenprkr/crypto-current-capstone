@@ -5,10 +5,13 @@
 
 .messageContainer {
     width: 75%;
-    margin: 20px auto 0px auto;
+    margin: 20px auto 20px auto;
     padding: 15px 30px;
     background-color: rgba(128, 128, 128, .2);
     border-radius: 15px;
+    -moz-box-shadow:    inset 0 0 7px #000000;
+    -webkit-box-shadow: inset 0 0 7px #000000;
+    box-shadow:         inset 0 0 7px #000000;
 }
 
 .messageEditButton {
@@ -37,7 +40,10 @@
     border-radius: 15px;
     padding: 10px;
     margin: 0 auto 10px auto;
-    width: 90%
+    width: 90%;
+    -webkit-box-shadow: 2px 2px 4px 0px #4f4f4f;
+    -moz-box-shadow: 2px 2px 4px 0px #4f4f4f;
+    box-shadow: 2px 2px 4px 0px #4f4f4f
 }
 
 .messageInputArea {
@@ -45,6 +51,9 @@
     border-radius: 15px;
     padding: 10px;
     margin-bottom: 10px;
+    -webkit-box-shadow: 2px 2px 4px 0px #4f4f4f;
+    -moz-box-shadow: 2px 2px 4px 0px #4f4f4f;
+    box-shadow: 2px 2px 4px 0px #4f4f4f
 }
 
 .messageUsername {
