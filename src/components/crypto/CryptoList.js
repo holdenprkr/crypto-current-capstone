@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react";
 import { CryptoDataContext } from "./CryptoDataProvider";
 import CryptoChart from "./CryptoChart";
 import CryptoStatistics from "./CryptoStatistics";
-import "./Crypto.css"
+import "./crypto.css"
 
 export default () => {
     const { cryptosData } = useContext(CryptoDataContext)
+    //State (string) used to determine what crypto has been selected
     const [ crypto, setCrypto ] = useState("")
+    //State (numeric) used to determine how much data to slice
     const [ dateRange, setDateRange ] = useState(30)
 
     //stores desired key name in a variable
@@ -26,10 +28,10 @@ export default () => {
 
 
 
-      //slices the last 30 dates from formattedDaysArray
+      //slices the last "dateRange" dates from formattedDaysArray
       const formattedDaysLabels = formattedDaysArray.slice(0, dateRange)
 
-      //slices the last 30 dates from all days array
+      //slices the last "dateRange" dates from all days array
       const daysArrayKeys = allDaysArray.slice(0, dateRange)
 
       //pushes each object with key date from original data into array.
