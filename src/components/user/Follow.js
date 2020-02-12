@@ -7,8 +7,8 @@ export default ({ follow }) => {
     const { messages } = useContext(MessageContext)
     const { deleteFollow } = useContext(FollowerContext)
 
+    //filter out messages from the user you're following
     const foundMessages = messages.filter(message => message.userId === follow.userId)
-    console.log("follow", follow)
 
         return (
             <div className="followCard">

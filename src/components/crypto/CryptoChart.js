@@ -37,7 +37,7 @@ export default ({ USDthirtyDays, crypto, setCrypto }) => {
     return (
       <div className="cryptoChart">
         <div className="currencySelect">
-          <span className="dropdownSection"><CryptoDropdown crypto={crypto} setCrypto={setCrypto} /></span>
+          <span className="dropdownSection"><CryptoDropdown setCrypto={setCrypto} /></span>
         </div>
         <h2>{foundCryptoObj === undefined ? "Bitcoin" : foundCryptoObj.crypto}</h2>
         <Line data={data} />

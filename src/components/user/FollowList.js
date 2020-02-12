@@ -7,10 +7,10 @@ import { FollowerContext } from "./FollowProvider";
 export default (props) => {
     const { followers } = useContext(FollowerContext)
 
+    //Filters out all the users active user is following 
     const usersImFollowing = followers.filter(following => following.activeUserId === parseInt(localStorage.getItem("activeUser"))) || []
 
-    console.log("usersImFollowing", usersImFollowing)
-
+    //display prompt if not following anyone or display users you follow and their messages
     if (usersImFollowing.length < 1) {
         return (
             <>

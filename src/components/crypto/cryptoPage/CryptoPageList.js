@@ -25,7 +25,7 @@ export default () => {
                 {cryptoFavorites.map(cryptoFav => <CryptoFavorite key={cryptoFav.id} cryptoFav={cryptoFav} />)}
             </div>
             <div className="cryptosToWatch">
-                <h2>Add cryptos you've got your eye on to your watchlist!</h2>
+                <h2 className="watchlistHeader">Add cryptos you've got your eye on to your watchlist!</h2>
                 {cryptos.map(crypto => <Crypto key={crypto.id} crypto={crypto} />)}
             </div>
         </div>
@@ -35,7 +35,7 @@ export default () => {
                 {marketFavorites.map(marketFav => <MarketFavorite key={marketFav.id} marketFav={marketFav} />)}
             </div>
             <div className="marketList">
-                <h2>Check out these reccomended markets if you'd like to make an investment!</h2>
+                <h2 className="favoriteMarketHeader">Check out these reccomended markets if you'd like to make an investment!</h2>
                 {markets.map(market => <Market key={market.id} market={market} />)}
             </div>
         </div>

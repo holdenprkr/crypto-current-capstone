@@ -6,13 +6,16 @@ import Form from 'react-bootstrap/Form'
 
 export default (props) => {
     const { messages, addMessage, updateMessage } = useContext(MessageContext)
+    //Message string state
     const [message, setMessage] = useState("")
+    //Message object state
     const [messageObj, setMessageObj] = useState({})
 
+    //Check if editting by check for messageId digit variable set in application views 
     const editMode = props.match.params.hasOwnProperty("messageId")
 
-    const handleControlledInputChange = (event) => {
-        
+    //Sets message string state equal to text input
+    const handleControlledInputChange = (event) => {  
         setMessage(event.target.value)
     }
 
@@ -20,16 +23,21 @@ export default (props) => {
     const setDefaults = () => {
         if (editMode) {
             const messageId = parseInt(props.match.params.messageId)
+            //finds message you're editting
             const selectedMessage = messages.find(m => m.id === messageId) || {}
+            //sets message string state to the message you've chosen to edit
             setMessage(selectedMessage.message)
+            //sets message object state to the message object you've chosen to edit
             setMessageObj(selectedMessage)
         }
     }
 
+    //When messages' state changes run setDefaults function
     useEffect(() => {
         setDefaults()
     }, [messages])
 
+    //depending on if you're in "edit mode" or not create or update message object
     const constructNewMessage = () => {
         if (editMode) {
             updateMessage({

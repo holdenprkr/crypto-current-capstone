@@ -7,7 +7,6 @@
 
 .cryptoList {
     display: flex;
-    flex-wrap: wrap;
     margin: 0 auto 10px auto;
     justify-content: space-around;
     width: 90%;
@@ -18,21 +17,24 @@
 }
 
 .watchlistContainer {
-    flex-basis: 40%;
+    width: fit-content;
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(128, 128, 128, .25);
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     padding: 10px;
     justify-content: center;
 }
 
 .cryptosToWatch {
-    flex-basis: 60%;
+    width: fit-content;
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(128, 128, 128, .5);
-    border-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px;
     justify-content: center;
 }
 
@@ -54,27 +56,28 @@
 
 .cryptoMarkets {
     display: flex;
-    flex-wrap: wrap;
     margin: 0 auto 10px auto;
     justify-content: space-around;
     width: 90%;
 }
 
 .marketList {
-    flex-basis: 60%;
+    width: fit-content;
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(128, 128, 128, .5);
-    border-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     justify-content: center;
 }
 
 .favoriteMarketContainer {
-    flex-basis: 40%;
+    width: fit-content;
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(128, 128, 128, .25);
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     padding: 10px;
     justify-content: center;
 }
@@ -89,5 +92,5 @@
 }
 
 .cryptoImage {
-    padding: 10px;
+    padding: 5px;
 }
