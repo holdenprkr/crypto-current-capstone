@@ -3,16 +3,16 @@ import {Line} from 'react-chartjs-2';
 import CryptoDropdown from "./CryptoDropdown";
 import { CryptoContext } from "./CryptoProvider";
 
-export default ({ USDthirtyDays, crypto, setCrypto }) => {
+export default ({ USDnumberData, crypto, setCrypto, label, dateRange }) => {
     const { cryptos } = useContext(CryptoContext)
 
     const foundCryptoObj = cryptos.find(cryptoObj => cryptoObj.code === crypto)
 
     const data = {
-        labels: ['-29 Days', '-28 Days', '-27 Days', '-26 Days', '-25 Days', '-24 Days', '-23 Days', '-22 Days', '-21 Days', '-20 Days', '-19 Days', '-18 Days', '-17 Days', '-16 Days', '-15 Days', '-14 Days', '-13 Days', '-12 Days', '-11 Days', '-10 Days', '-9 Days', '-8 Days', '-7 Days', '-6 Days', '-5 Days', '-4 Days', '-3 Days', '-2 Days', '-1 Day', 'Today'],
+        labels: label.reverse(),
         datasets: [
           {
-            label: 'Crypto Price For The Last 30 Days',
+            label: `Crypto Price For The Last ${dateRange} Days`,
             fill: true,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
@@ -30,7 +30,7 @@ export default ({ USDthirtyDays, crypto, setCrypto }) => {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: USDthirtyDays.reverse()
+            data: USDnumberData.reverse()
           }
         ]
       };

@@ -7,56 +7,66 @@ import "./Crypto.css"
 export default () => {
     const { cryptosData } = useContext(CryptoDataContext)
     const [ crypto, setCrypto ] = useState("")
+    const [ dateRange, setDateRange ] = useState(30)
 
     //stores desired key name in a variable
     const timeSeriesKeyName = 'Time Series (Digital Currency Daily)'
     
-    //stores all key names on desired key (timeSeriesKeyName)  of data in all days array (array of date strings)
+    //stores all key names on desired key (timeSeriesKeyName) of data in all days array (array of date strings)
     let allDaysArray = []
-    for (let property in cryptosData[timeSeriesKeyName]) {
-        if (cryptosData[timeSeriesKeyName].hasOwnProperty(property)) {
-          allDaysArray.push(property)
+    for (let key in cryptosData[timeSeriesKeyName]) {
+        if (cryptosData[timeSeriesKeyName].hasOwnProperty(key)) {
+          allDaysArray.push(key)
         }
       }
+      let formattedDaysArray = []
+      for (let date of allDaysArray) {
+        formattedDaysArray.push(new Date(date).toLocaleDateString('en-us'))
+      }
+
+
+
+      //slices the last 30 dates from formattedDaysArray
+      const formattedDaysLabels = formattedDaysArray.slice(0, dateRange)
 
       //slices the last 30 dates from all days array
-      const thirtyDaysArrayKeys = allDaysArray.slice(0, 30)
+      const daysArrayKeys = allDaysArray.slice(0, dateRange)
 
       //pushes each object with key date from original data into array.
-      let thirtyDaysArrayObjects = []
-      for (let day of thirtyDaysArrayKeys) {
-        thirtyDaysArrayObjects.push(cryptosData[timeSeriesKeyName][day])
+      let daysArrayObjects = []
+      for (let day of daysArrayKeys) {
+        daysArrayObjects.push(cryptosData[timeSeriesKeyName][day])
       }
 
       //finds closing values in USD of queried crypto for each day and pushes into array as strings
-      let USDthirtyDayNumberStringData = []
-      for (let dayObj of thirtyDaysArrayObjects) {
-          USDthirtyDayNumberStringData.push(dayObj[ '4b. close (USD)'])
+      let USDnumberStringData = []
+      for (let dayObj of daysArrayObjects) {
+          USDnumberStringData.push(dayObj[ '4b. close (USD)'])
       }
 
       //converts number strings into number values and pushes to array
-      let USDthirtyDayNumbersData = []
-      for (let numStr of USDthirtyDayNumberStringData) {
-        USDthirtyDayNumbersData.push(parseFloat(numStr).toFixed(2))
+      let USDnumberData = []
+      for (let numStr of USDnumberStringData) {
+        USDnumberData.push(parseFloat(numStr).toFixed(2))
       }
 
       //finds volume of queried crypto for each day and pushes into array as strings
-      let thirtyDayVolumeStringData = []
-      for (let dayObj of thirtyDaysArrayObjects) {
-          thirtyDayVolumeStringData.push(dayObj['5. volume'])
+      let dayVolumeStringData = []
+      for (let dayObj of daysArrayObjects) {
+          dayVolumeStringData.push(dayObj['5. volume'])
       }
 
       //converts number strings into number values and pushes to array
-      let thirtyDayVolumeNumberData = []
-      for (let volStr of thirtyDayVolumeStringData) {
-          thirtyDayVolumeNumberData.push(parseFloat(volStr))
+      let dayVolumeNumberData = []
+      for (let volStr of dayVolumeStringData) {
+          dayVolumeNumberData.push(parseFloat(volStr))
       }
       
     return (
       <>
         <div className="cryptoData">
-            <CryptoStatistics USDthirtyDays={USDthirtyDayNumbersData} thirtyDaysVolume={thirtyDayVolumeNumberData} crypto={crypto} />
-            <CryptoChart USDthirtyDays={USDthirtyDayNumbersData} crypto={crypto} setCrypto={setCrypto} />
+            <CryptoStatistics setDateRange={setDateRange} USDnumberData={USDnumberData} numberDataVolume={dayVolumeNumberData} crypto={crypto} dateRange={dateRange}/>
+            <CryptoChart USDnumberData={USDnumberData} label={formattedDaysLabels} crypto={crypto} setCrypto={setCrypto} dateRange={dateRange} />
         </div>
       </>
     )
