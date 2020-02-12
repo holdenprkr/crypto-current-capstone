@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button'
 import { CryptoContext } from './CryptoProvider';
 import { CryptoDataContext } from './CryptoDataProvider';
