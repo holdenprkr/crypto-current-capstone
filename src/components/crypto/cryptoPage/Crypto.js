@@ -6,8 +6,8 @@ import { CryptoFavoriteContext } from "./CryptoFavoriteProvider";
 export default ({ crypto }) => {
     const { cryptoFavorites, addCryptoFavorite } = useContext(CryptoFavoriteContext)
 
+    // Check if that's being passed in is favorited by active user
     const foundFavorites = cryptoFavorites.filter(favs => favs.activeUserId === parseInt(localStorage.getItem("activeUser")))
-
     const foundCrypto =  foundFavorites.find(fav => fav.cryptoId === crypto.id) || {}
 
     if (foundCrypto.cryptoId === crypto.id) {

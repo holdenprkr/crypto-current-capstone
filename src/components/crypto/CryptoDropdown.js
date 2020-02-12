@@ -3,15 +3,17 @@ import Button from 'react-bootstrap/Button'
 import { CryptoContext } from './CryptoProvider';
 import { CryptoDataContext } from './CryptoDataProvider';
 
-export default ({ crypto, setCrypto }) => {
+export default ({ setCrypto }) => {
     const { getCryptosData } = useContext(CryptoDataContext)
     const { cryptos } = useContext(CryptoContext)
     const [ chosenTicker, setTicker ] = useState("")
 
+    //Set chosenTicker state to selected option
     const handleControlledInputChange = (event) => {
       setTicker(event.target.value)
   }
 
+    //Dropdown for crypto options to query
     return(
       <div className="cryptoDropdown">
         <select 
@@ -27,7 +29,9 @@ export default ({ crypto, setCrypto }) => {
         </select>
           <Button 
           onClick={() => {
+            //Set crypto state to selected crypto
             setCrypto(chosenTicker)
+            //Query API with selected crypto
             getCryptosData(chosenTicker)
           }}
           name="cryptoSelect"

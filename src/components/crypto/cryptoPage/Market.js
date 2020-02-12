@@ -11,11 +11,12 @@ export default ({ market }) => {
         window.open(market.url, '_blank')
     }
 
-    //finds market if it's in your favorites
+    //checks if market is in your favorites
     const foundFavorites = marketFavorites.filter(favs => favs.activeUserId === parseInt(localStorage.getItem("activeUser")))
     const foundMarket = foundFavorites.find(fav => fav.marketId === market.id) || {}
 
 
+    //Individual market card, don't display if favorited
     if (foundMarket.marketId === market.id) {
         return null
     } else {

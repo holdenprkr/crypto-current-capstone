@@ -11,6 +11,7 @@ export default ({ marketFav }) => {
         window.open(marketFav.market.url, '_blank')
     }
 
+    //Individual market card
     return (
         <div className="marketCardContainer">
             <Card className="marketCard" style={{ width: '11rem' }}>
