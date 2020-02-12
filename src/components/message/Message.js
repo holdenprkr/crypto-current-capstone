@@ -7,11 +7,11 @@ export default ({ message, history, handleClick }) => {
     const { deleteMessage } = useContext(MessageContext)
     const { newFollow, followers, deleteFollow } = useContext(FollowerContext)
 
+    //Checks if message that's being passed in is posted by someone I'm following
     const UsersImFollowing = followers.filter(following => following.activeUserId === parseInt(localStorage.getItem("activeUser")))
-
     const FoundFollow = UsersImFollowing.find(user => user.userId === message.userId)
 
-    
+    // Display each message depending on if it's yours, someone you follow, or someone you don't follow
     if (message.userId === parseInt(localStorage.getItem("activeUser"))) {
         return (
             <>

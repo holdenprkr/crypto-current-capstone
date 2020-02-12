@@ -4,33 +4,43 @@ import Button from 'react-bootstrap/Button'
 import { MarketFavoriteContext } from "./MarketFavoriteProvider";
 
 export default ({ market }) => {
-    const { addMarketFavorite } = useContext(MarketFavoriteContext)
+    const { marketFavorites, addMarketFavorite } = useContext(MarketFavoriteContext)
 
+    //Opens window in new tab
     const handleClick = () => {
-        window.location.href = market.url
+        window.open(market.url, '_blank')
     }
 
-    return (
-        <div className="marketCardContainer">
-            <Card className="marketCard" style={{ width: '11rem' }}>
-                <Card.Img variant="top" className="cryptoImage" src={market.logo} />
-                <Card.Body>
-                    <Card.Title>{market.name}</Card.Title>
-                    <Card.Text>
-                    Description: Button? 
-                    </Card.Text>
-                    <Button className="favoriteButton" variant="primary"
-                    onClick={() => {
-                        const marketFav = {
-                            marketId: market.id,
-                            activeUserId: parseInt(localStorage.getItem("activeUser"), 10)
-                          }
-                        addMarketFavorite(marketFav)
-                      }}
-                    >Favorite</Button>
-                    <Button className="favoriteButton visitButton" variant="primary" onClick={handleClick}>Visit</Button>
-                </Card.Body>
-            </Card>
-        </div>
-    );
+    //finds market if it's in your favorites
+    const foundFavorites = marketFavorites.filter(favs => favs.activeUserId === parseInt(localStorage.getItem("activeUser")))
+    const foundMarket = foundFavorites.find(fav => fav.marketId === market.id) || {}
+
+
+    if (foundMarket.marketId === market.id) {
+        return null
+    } else {
+        return (
+            <div className="marketCardContainer">
+                <Card className="marketCard" style={{ width: '14rem' }}>
+                    <Card.Img variant="top" className="cryptoImage" src={market.logo} />
+                    <Card.Body>
+                        <Card.Title>{market.name}</Card.Title>
+                        <Card.Text>
+                        {market.description}
+                        </Card.Text>
+                        <Button className="favoriteButton" variant="primary"
+                        onClick={() => {
+                            const marketFav = {
+                                marketId: market.id,
+                                activeUserId: parseInt(localStorage.getItem("activeUser"), 10)
+                              }
+                            addMarketFavorite(marketFav)
+                          }}
+                        >Favorite</Button>
+                        <Button className="favoriteButton visitButton" variant="primary" onClick={handleClick}>Visit</Button>
+                    </Card.Body>
+                </Card>
+            </div>
+        );
+    }
 };

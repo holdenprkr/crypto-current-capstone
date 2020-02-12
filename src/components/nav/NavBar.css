@@ -4,6 +4,7 @@
     justify-content: center;
     margin: 0px 0px 0px 0px;
     overflow: auto;
+    padding: 8px 0px !important;
   }
   
   .active {

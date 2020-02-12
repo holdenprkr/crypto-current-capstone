@@ -2,14 +2,19 @@ import React from "react";
 import Button from 'react-bootstrap/Button'
 
 export default ({ USDthirtyDays, thirtyDaysVolume, crypto }) => {
+    //Slices past 29 days of data from array
     const allButTodayVolumeArr = thirtyDaysVolume.slice(0,29)
+    //Averages all volumes
     const VolumeArrayAvg = allButTodayVolumeArr.reduce((a,b) => a + b, 0) / allButTodayVolumeArr.length
+    //Fixes avaerage volume by 8 places
     const FormattedVolAvg = VolumeArrayAvg.toFixed(8)
 
+    //Opens window in new tab
     const handleClick = () => {
-        window.location.href = 'https://beincrypto.com/'
+        window.open('https://beincrypto.com/', '_blank')
     }
     
+    //displays data accordingly to label
     return (
         <div className="cryptoStatistics">
             <h2>{crypto === "" ? "BTC" : crypto} Statistics</h2>
@@ -23,7 +28,6 @@ export default ({ USDthirtyDays, thirtyDaysVolume, crypto }) => {
                 <div className="cryptoNewsContainer">
                     <Button type="button" className="btn btn-info cryptoNewsButton" onClick={handleClick}>Crypto News</Button>
                 </div>
-                {/* <div>Volume Average in CNY:</div> */}
             </section>
         </div>
     );
