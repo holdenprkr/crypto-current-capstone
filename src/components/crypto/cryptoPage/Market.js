@@ -38,7 +38,7 @@ export default ({ market }) => {
                             addMarketFavorite(marketFav)
                           }}
                         >Favorite</Button>
-                        <Button className="favoriteButton visitButton" variant="primary" onClick={handleClick}>Visit</Button>
+                        <Button className="favoriteButton visitButtonToFavorite" variant="primary" onClick={handleClick}>Visit</Button>
                     </Card.Body>
                 </Card>
             </div>

@@ -4,7 +4,7 @@ import CryptoTimePicker from "./CryptoTimePicker";
 
 export default ({ USDnumberData, numberDataVolume, crypto, dateRange, setDateRange }) => {
     //Slices past X(state) days of data from array
-    const allButTodayVolumeArr = numberDataVolume.slice(0, dateRange)
+    const allButTodayVolumeArr = numberDataVolume.slice(1, dateRange)
     //Averages all volumes
     const VolumeArrayAvg = allButTodayVolumeArr.reduce((a,b) => a + b, 0) / allButTodayVolumeArr.length
     //Fixes avaerage volume by 8 places

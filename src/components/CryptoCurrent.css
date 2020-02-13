@@ -6,3 +6,19 @@ h2 {
     color: #003c77;
     text-align: center;
 }
+
+Button {
+    -webkit-box-shadow: 1.5px 1.5px 3px 0px #4f4f4f;
+    -moz-box-shadow: 1.5px 1.5px 3px 0px #4f4f4f;
+    box-shadow: 1.5px 1.5px 3px 0px #4f4f4f
+}
+
+.btn:focus {
+    outline: none !important;
+    box-shadow: 1.5px 1.5px 3px 0px #4f4f4f !important;
+ }
+
+.btn:hover {
+    outline: none !important;
+    box-shadow: none !important;
+}

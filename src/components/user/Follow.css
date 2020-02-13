@@ -11,9 +11,9 @@
     padding: 10px;
     margin: 0 auto 10px auto;
     width: 82%;
-    -moz-box-shadow:    inset 0 0 7px #000000;
-    -webkit-box-shadow: inset 0 0 7px #000000;
-    box-shadow:         inset 0 0 7px #000000;
+    -moz-box-shadow:    inset 0 0 7px #4f4f4f;
+    -webkit-box-shadow: inset 0 0 7px #4f4f4f;
+    box-shadow:         inset 0 0 7px #4f4f4f;
 }
 
 .followerPost {

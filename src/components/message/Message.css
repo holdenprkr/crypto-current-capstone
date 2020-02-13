@@ -9,9 +9,9 @@
     padding: 15px 30px;
     background-color: rgba(128, 128, 128, .2);
     border-radius: 15px;
-    -moz-box-shadow:    inset 0 0 7px #000000;
-    -webkit-box-shadow: inset 0 0 7px #000000;
-    box-shadow:         inset 0 0 7px #000000;
+    -moz-box-shadow:    inset 0 0 7px #4f4f4f;
+    -webkit-box-shadow: inset 0 0 7px #4f4f4f;
+    box-shadow:         inset 0 0 7px #4f4f4f;
 }
 
 .messageEditButton {

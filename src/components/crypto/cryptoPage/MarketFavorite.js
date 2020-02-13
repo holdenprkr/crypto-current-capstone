@@ -23,7 +23,7 @@ export default ({ marketFav }) => {
                         deleteMarketFavorite(marketFav.id)
                     }}
                     >Remove</Button>
-                    <Button className="favoriteButton visitButton" variant="primary" onClick={handleClick}>Visit</Button>
+                    <Button className="favoriteButton visitButtonFavorited" variant="primary" onClick={handleClick}>Visit</Button>
                 </Card.Body>
             </Card>
         </div>
